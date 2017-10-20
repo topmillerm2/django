@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add a trip</title>
+    <style>
+        li{
+            list-style-type: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/travels">Home</a>
+    <a href="/logout">Logout</a> 
+    <h1>Add a trip</h1>
+    <form action="/process/trip" method = "post">
+        {% csrf_token %}
+        <ul>
+            <li>Destination: <input type="text" name="destination"></li>
+            <li>Description: </li><li> <textarea name= "description" rows="10" cols="30"></textarea></li>
+            <li>Date From: <input type="date" name="date_from" ></li> 
+            <li>Travel Date To: <input type="date" name="date_to"></li>
+            <li><input type="submit" name="add" value="Add"></li>
+        </ul>
+    </form>
+</body>
+</html>

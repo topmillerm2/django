@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Travels</title>
+</head>
+<body>
+    <h1>Hello, {{request.session.name}}</h1>
+    <a href="/logout">Logout</a> 
+    <h3>Your Trip Schedules</h3>
+    <table>
+        <tr>
+            <td>Destination</td>
+            <td>Travel Start Date</td>
+            <td>Travel End Date</td>
+            <td>Plan</td>
+        </tr>
+        {% for trip in travels %}
+        <tr>
+
+        </tr>
+        {% endfor%}
+    </table>
+    <h3>Other User's Travel Plans</h3>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Destination</td>
+            <td>Travel Start Date</td>
+            <td>Travel End Date</td>
+            <td>Do You Want to Join?</td>
+        </tr>
+        {% for trip in trips%}
+        <tr>
+            <td>{trip.trips.name}}</td>
+            <td><a href="/destination/{{trip.id}}">{{trip.destination}}</a></td>
+            <td>{{trip.start_date}}</td>
+            <td>{{trip.end_date}}</td>
+            <td><a href="">Join</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/travels/add">Add Travel Plan</a>
+</body>
+</html>

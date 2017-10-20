@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destination</title>
+</head>
+<body>
+    {% for trip in trip%}
+    <h1>{{trip.destination}}</h1>
+    <p>Planned By: {{trip.user.name}}</p>
+    <p>Description: {{trip.plan}}</p>
+    <p>Travel Date From: {{trip.start_date}}</p>
+    <p>Travel Date To: {{trip.end_date}}</p>
+
+    {% endfor %}
+
+    <h4>Other users joining the trip:</h4>
+    <a href="/travels">Home</a>
+    <a href="/logout">Logout</a> 
+    
+</body>
+</html>
